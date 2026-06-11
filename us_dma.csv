@@ -1,0 +1,207 @@
+dma_name,principal_city,hardness_mgl,demand_t1,demand_t2,demand_t3,demand_t4,population,median_income,hardness_source,precision_flag
+"Abilene-Sweetwater, TX",Abilene,227,,,,,300050,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Albany, GA",Albany,130,,,,,382725,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Albany-Schenectady-Troy, NY",Albany,75,,,,,1438975,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Albuquerque-Santa Fe, NM",Albuquerque,180,,,,,1770125,68000,https://www.abcwua.org/your-drinking-water/,approximate
+"Alexandria, LA",Alexandria,140,,,,,214275,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Alpena, MI",Alpena,120,,,,,40025,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Amarillo, TX",Amarillo,250,,,,,496975,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Atlanta, GA",Atlanta,22,,,,,6895425,88500,https://www.atlantawatershed.org/drinking-water-quality-report/,approximate
+"Augusta, GA",Augusta,130,,,,,727675,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Austin, TX",Austin,184,,,,,2574500,97000,https://www.austintexas.gov/department/water-quality-reports,precise
+"Bakersfield, CA",Bakersfield,68,,,,,610775,,https://dropconnect.com/water-hardness-in-california-cities/,approximate
+"Baltimore, MD",Baltimore,120,,,,,2887500,98000,https://publicworks.baltimorecity.gov/water-quality,approximate
+"Bangor, ME",Bangor,60,,,,,367650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Baton Rouge, LA",Baton Rouge,140,,,,,889400,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Beaumont-Port Arthur, TX",Beaumont,250,,,,,426050,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Bend, OR",Bend,70,,,,,207900,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Billings, MT",Billings,95,,,,,300300,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Biloxi-Gulfport, MS",Biloxi,115,,,,,362400,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Binghamton, NY",Binghamton,75,,,,,331725,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Birmingham (Anniston and Tuscaloosa), AL",Birmingham,55,,,,,1929650,67000,https://www.bwwb.org/water-quality,approximate
+"Bluefield-Beckley-Oak Hill, WV",Bluefield,130,,,,,298325,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Boise, ID",Boise,100,,,,,863125,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Boston, MA (Manchester, NH)",Boston,15,,,,,6461150,113000,https://www.mwra.com/your-water/water-quality,approximate
+"Bowling Green, KY",Bowling Green,140,,,,,233300,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Buffalo, NY",Buffalo,100,,,,,1592725,70000,https://buffalowater.org/waterquality/,approximate
+"Burlington, VT-Plattsburgh, NY",Burlington,70,,,,,924600,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Butte-Bozeman, MT",Butte,95,,,,,208975,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Casper-Riverton, WY",Casper,210,,,,,142150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Cedar Rapids-Waterloo-Iowa City & Dubuque, IA",Cedar Rapids,130,,,,,910325,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Champaign & Springfield-Decatur, IL",Champaign & Springfield,120,,,,,928800,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Charleston, SC",Charleston,130,,,,,999900,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Charleston-Huntington, WV",Charleston,130,,,,,1055400,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Charlotte, NC",Charlotte,13,,,,,3455050,80000,https://www.charlottenc.gov/water/Water-Quality,precise
+"Charlottesville, VA",Charlottesville,120,,,,,248150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Chattanooga, TN",Chattanooga,130,,,,,978425,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Cheyenne, WY-Scottsbluff, NE",Cheyenne,210,,,,,152375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Chicago, IL",Chicago,145,,,,,9136875,87000,https://www.chicago.gov/city/en/depts/water/supp_info/water_quality_resultsandreports.html,approximate
+"Chico-Redding, CA",Chico,120,,,,,470800,,https://dropconnect.com/water-hardness-in-california-cities/,approximate
+"Cincinnati, OH",Cincinnati,130,,,,,2396575,78000,https://www.cincinnati-oh.gov/water/water-quality/,approximate
+"Clarksburg-Weston, WV",Clarksburg,130,,,,,252800,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Cleveland-Akron (Canton), OH",Cleveland,120,,,,,3885850,68500,https://www.clevelandwater.com/your-water/water-quality,approximate
+"Colorado Springs-Pueblo, CO",Colorado Springs,185,,,,,971825,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Columbia, SC",Columbia,130,,,,,1126100,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Columbia-Jefferson City, MO",Columbia,200,,,,,475925,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Columbus, GA",Columbus,130,,,,,586125,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Columbus, OH",Columbus,120,,,,,2545975,78000,https://www.columbus.gov/utilities/water-quality/,approximate
+"Columbus-Tupelo-West Point, MS",Columbus,115,,,,,477375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Corpus Christi, TX",Corpus Christi,163,,,,,524450,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Dallas-Ft. Worth, TX",Dallas,140,,,,,8161225,88000,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Davenport, IA-Rock Island-Moline, IL",Davenport,130,,,,,762100,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Dayton, OH",Dayton,130,,,,,1245500,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Denver, CO",Denver,90,,,,,4515675,103000,https://www.denverwater.org/your-water/water-quality/water-hardness,precise
+"Des Moines-Ames, IA",Des Moines,130,,,,,1201375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Detroit, MI",Detroit,100,,,,,4851875,70500,https://dropconnect.com/water-hardness-in-michigan-cities/,approximate
+"Dothan, AL",Dothan,150,,,,,271925,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Duluth, MN-Superior, WI",Duluth,50,,,,,449275,,https://www.duluthmn.gov/public-works-utilities/utilities/water/,approximate
+"El Paso, TX",El Paso,171,,,,,962700,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Elmira, NY",Elmira,75,,,,,235075,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Erie, PA",Erie,120,,,,,378125,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Eugene, OR",Eugene,70,,,,,640050,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Eureka, CA",Eureka,60,,,,,149175,,https://www.hbmwd.com/water-quality,approximate
+"Evansville, IN",Evansville,250,,,,,726975,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Fargo-Valley City, ND",Fargo,130,,,,,673275,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Flint-Saginaw-Bay City, MI",Flint,120,,,,,1146775,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Fresno-Visalia, CA",Fresno,108,,,,,1590650,70000,https://dropconnect.com/water-hardness-in-california-cities/,precise
+"Ft. Myers-Naples, FL",Fort Myers,103,,,,,1604625,76000,https://dropconnect.com/water-hardness-in-florida-cities/,approximate
+"Ft. Smith-Fayetteville-Springdale-Rogers, AR",Ft. Smith,60,,,,,881025,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Ft. Wayne, IN",Ft. Wayne,250,,,,,726300,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Gainesville, FL",Gainesville,140,,,,,366400,,https://dropconnect.com/water-hardness-in-florida-cities/,approximate
+"Glendive, MT",Glendive,95,,,,,10925,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Grand Junction-Montrose, CO",Grand Junction,185,,,,,202725,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Grand Rapids-Kalamazoo-Battle Creek, MI",Grand Rapids,140,,,,,2002575,78000,https://www.grandrapidsmi.gov/Government/Departments/Water-System,approximate
+"Great Falls, MT",Great Falls,95,,,,,165975,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Green Bay-Appleton, WI",Green Bay,140,,,,,1197425,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Greensboro-High Point-Winston Salem, NC",Greensboro,30,,,,,1917450,62000,https://www.greensboro-nc.gov/departments/water-resources/water-system/monthly-water-quality-reports,approximate
+"Greenville-New Bern-Washington, NC",Greenville,120,,,,,798375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Greenville-Spartanburg, SC-Asheville, NC-Anderson,SC",Greenville,10,,,,,2469350,67000,https://www.greenvillewater.com/water-resources/water-quality,approximate
+"Greenwood-Greenville, MS",Greenwood,115,,,,,149950,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Harlingen-Weslaco-Brownsville-McAllen, TX",Harlingen,77,,,,,1070600,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Harrisburg-Lancaster-Lebanon-York, PA",Harrisburg,70,,,,,2005900,79000,https://capitalregionwater.com/water-quality/,approximate
+"Harrisonburg, VA",Harrisonburg,120,,,,,252300,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Hartford & New Haven, CT",Hartford,20,,,,,2652275,96000,https://themdc.org/water-quality/,approximate
+"Hattiesburg-Laurel, MS",Hattiesburg,115,,,,,285400,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Helena, MT",Helena,95,,,,,70275,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Houston, TX",Houston,136,,,,,6993550,81000,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,precise
+"Huntsville-Decatur (Florence), AL",Huntsville,150,,,,,1130575,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Idaho Falls-Pocatello, ID",Idaho Falls,100,,,,,370450,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Indianapolis, IN",Indianapolis,280,,,,,3080525,79000,https://www.citizensenergygroup.com/My-Home/Utility-Services/Water,approximate
+"Jackson, MS",Jackson,115,,,,,847925,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Jackson, TN",Jackson,130,,,,,249350,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Jacksonville, FL",Jacksonville,260,,,,,2100850,78000,https://dropconnect.com/water-hardness-in-florida-cities/,precise
+"Johnstown-Altoona, PA",Johnstown,120,,,,,713800,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Jonesboro, AR",Jonesboro,60,,,,,223500,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Joplin, MO-Pittsburg, KS",Joplin,200,,,,,388100,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Kansas City, MO",Kansas City,110,,,,,2584200,83000,https://www.kcwater.us/water-quality/,approximate
+"Knoxville, TN",Knoxville,100,,,,,1460250,70000,https://www.kub.org/about/water-quality,approximate
+"La Crosse-Eau Claire, WI",La Crosse,140,,,,,560300,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Lafayette, IN",Lafayette,250,,,,,186550,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Lafayette, LA",Lafayette,140,,,,,613025,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Lake Charles, LA",Lake Charles,140,,,,,242925,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Lansing, MI",Lansing,120,,,,,664575,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Laredo, TX",Laredo,250,,,,,211875,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Las Vegas, NV",Las Vegas,278,,,,,2241150,76000,https://www.lvvwd.com/water-quality/hardness/index.html,precise
+"Lexington, KY",Lexington,140,,,,,1294150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Lima, OH",Lima,130,,,,,174075,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Lincoln & Hastings-Kearney, NE",Lincoln & Hastings,210,,,,,741250,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Little Rock-Pine Bluff, AR",Little Rock,25,,,,,1477450,66000,https://carkw.com/water-quality/,approximate
+"Los Angeles, CA",Los Angeles,195,,,,,14589475,92000,https://dropconnect.com/water-hardness-in-california-cities/,precise
+"Louisville, KY",Louisville,159,,,,,1755775,71000,https://louisvilleky.gov/news/pure-tap-pure-quality,precise
+"Lubbock, TX",Lubbock,201,,,,,441025,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Macon, GA",Macon,130,,,,,646000,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Madison, WI",Madison,140,,,,,1108050,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Mankato, MN",Mankato,225,,,,,140475,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Marquette, MI",Marquette,120,,,,,223875,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Medford-Klamath Falls, OR",Medford,70,,,,,442475,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Memphis, TN",Memphis,55,,,,,1665750,65000,https://www.mlgw.com/residential/waterquality,approximate
+"Meridian, MS",Meridian,115,,,,,161650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Miami-Fort Lauderdale, FL",Miami,100,,,,,4392300,76000,https://www.miamidade.gov/global/water/water-quality-reports.page,approximate
+"Milwaukee, WI",Milwaukee,140,,,,,2362250,75000,https://city.milwaukee.gov/water/WaterQuality,approximate
+"Minneapolis-St. Paul, MN",Minneapolis,90,,,,,4716700,96000,https://www.minneapolismn.gov/government/departments/public-works/water-treatment/,approximate
+"Minot-Bismarck-Dickinson(Williston), ND",Minot,130,,,,,409650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Missoula, MT",Missoula,95,,,,,345750,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Mobile, AL-Pensacola (Ft. Walton Beach), FL",Mobile,20,,,,,1513350,60000,https://www.mawss.com/water-quality,approximate
+"Monroe, LA-El Dorado, AR",Monroe,140,,,,,428250,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Monterey-Salinas, CA",Monterey,320,,,,,577375,,https://dropconnect.com/water-hardness-in-california-cities/,approximate
+"Montgomery-Selma, AL",Montgomery,150,,,,,622750,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Myrtle Beach-Florence, SC",Myrtle Beach,130,,,,,869150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Nashville, TN",Nashville,120,,,,,2998500,84000,https://www.nashville.gov/departments/water/water-quality,approximate
+"New Orleans, LA",New Orleans,120,,,,,1681975,63000,https://www.swbno.org/About/WaterQuality,approximate
+"New York, NY",New York,31,,,,,18736275,96500,https://www.nyc.gov/site/dep/water/drinking-water-frequently-asked-questions.page,precise
+"Norfolk-Portsmouth-Newport News, VA",Norfolk,47,,,,,1949925,80000,https://norfolk.gov/657/Water-Quality-Reports,precise
+"North Platte, NE",North Platte,210,,,,,35925,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Odessa-Midland, TX",Odessa,250,,,,,423475,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Oklahoma City, OK",Oklahoma City,120,,,,,1906750,71000,https://www.okc.gov/departments/utilities/water-quality,approximate
+"Omaha, NE",Omaha,210,,,,,1145200,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Orlando-Daytona Beach-Melbourne, FL",Orlando,129,,,,,4756050,76000,https://www.ouc.com/about/water-services/,precise
+"Ottumwa, IA-Kirksville, MO",Ottumwa,130,,,,,117550,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Paducah, KY-Cape Girardeau, MO-Harrisburg, IL",Paducah,140,,,,,946300,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Palm Springs, CA",Palm Springs,200,,,,,417650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Panama City, FL",Panama City,200,,,,,407750,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Parkersburg, WV",Parkersburg,130,,,,,151650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Peoria-Bloomington, IL",Peoria,120,,,,,615675,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Philadelphia, PA",Philadelphia,150,,,,,7864800,87500,https://water.phila.gov/drinking-water/faq/,approximate
+"Phoenix, AZ",Phoenix,250,,,,,5495500,84000,https://www.phoenix.gov/waterservices/waterquality,approximate
+"Pittsburgh, PA",Pittsburgh,85,,,,,2919725,74000,https://www.pgh2o.com/your-water/water-quality,approximate
+"Portland, OR",Portland,20,,,,,3194800,95000,https://www.portland.gov/water/water-quality,approximate
+"Portland-Auburn, ME",Portland,60,,,,,1097575,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Presque Isle, ME",Presque Isle,60,,,,,67200,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Providence, RI-New Bedford, MA",Providence,12,,,,,1657025,86000,https://www.provwater.com/water_quality,approximate
+"Quincy, IL-Hannibal, MO-Keokuk, IA",Quincy,120,,,,,249125,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Raleigh-Durham (Fayetteville), NC",Raleigh,40,,,,,3364600,91000,https://raleighnc.gov/water/services/drinking-water-quality,approximate
+"Rapid City, SD",Rapid City,150,,,,,275150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Reno, NV",Reno,275,,,,,788375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Richmond-Petersburg, VA",Richmond,118,,,,,1563450,86000,https://www.rva.gov/public-utilities/water-quality,approximate
+"Roanoke-Lynchburg, VA",Roanoke,120,,,,,1150000,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Rochester, MN-Mason City, IA-Austin, MN",Rochester,225,,,,,381800,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Rochester, NY",Rochester,75,,,,,1089650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Rockford, IL",Rockford,120,,,,,452275,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Sacramento-Stockton-Modesto, CA",Sacramento,141,,,,,3744800,92000,https://dropconnect.com/water-hardness-in-california-cities/,precise
+"Salisbury, MD",Salisbury,120,,,,,497325,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Salt Lake City, UT",Salt Lake City,200,,,,,2908800,99000,https://www.slc.gov/utilities/water-quality/,approximate
+"San Angelo, TX",San Angelo,472,,,,,142600,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"San Antonio, TX",San Antonio,300,,,,,2741000,74000,https://www.saws.org/your-water/water-quality/,approximate
+"San Diego, CA",San Diego,261,,,,,2790375,103000,https://dropconnect.com/water-hardness-in-california-cities/,precise
+"San Francisco-Oakland-San Jose, CA",San Francisco,32,,,,,6356200,136000,https://dropconnect.com/water-hardness-in-california-cities/,precise
+"Santa Barbara-Santa Maria-San Luis Obispo, CA",Santa Barbara,287,,,,,614875,,https://dropconnect.com/water-hardness-in-california-cities/,approximate
+"Savannah, GA",Savannah,130,,,,,1000475,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Seattle-Tacoma, WA",Seattle,22,,,,,5245600,117000,https://www.seattle.gov/utilities/your-services/water/water-quality,approximate
+"Sherman, TX-Ada, OK",Sherman,95,,,,,350550,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Shreveport, LA",Shreveport,140,,,,,937575,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Sioux City, IA",Sioux City,130,,,,,393800,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Sioux Falls (Mitchell), SD",Sioux Falls,150,,,,,716500,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"South Bend-Elkhart, IN",South Bend,250,,,,,829500,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Spokane, WA",Spokane,200,,,,,1240650,,https://my.spokanecity.org/publicworks/water/,approximate
+"Springfield, MO",Springfield,200,,,,,1135700,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Springfield-Holyoke, MA",Springfield,75,,,,,668025,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"St. Joseph, MO",St. Joseph,200,,,,,111150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"St. Louis, MO",St. Louis,130,,,,,3184675,77000,https://www.stlwater.com/water-quality/,approximate
+"Syracuse, NY",Syracuse,75,,,,,967575,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Tallahassee, FL-Thomasville, GA",Tallahassee,155,,,,,758825,,https://dropconnect.com/water-hardness-in-florida-cities/,approximate
+"Tampa-St. Petersburg (Sarasota), FL",Tampa,186,,,,,5553100,71500,https://dropconnect.com/water-hardness-in-florida-cities/,precise
+"Terre Haute, IN",Terre Haute,250,,,,,356650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Toledo, OH",Toledo,130,,,,,1060125,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Topeka, KS",Topeka,250,,,,,440625,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Traverse City-Cadillac, MI",Traverse City,120,,,,,667400,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Tri-Cities, TN-VA",Tri,130,,,,,828800,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Tucson (Sierra Vista), AZ",Tucson,275,,,,,1244150,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Tulsa, OK",Tulsa,210,,,,,1439450,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Twin Falls, ID",Twin Falls,100,,,,,192675,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Tyler-Longview(Lufkin & Nacogdoches), TX",Tyler,32,,,,,744750,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Utica, NY",Utica,75,,,,,255400,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Victoria, TX",Victoria,181,,,,,82325,,https://dropconnect.com/blogs/articles/water-hardness-in-texas-cities,approximate
+"Waco-Temple-Bryan, TX",Waco,250,,,,,1049000,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Washington, DC (Hagerstown, MD)",Washington,120,,,,,6576600,121000,https://www.dcwater.com/resources/waterquality/testresults,approximate
+"Watertown, NY",Watertown,75,,,,,233375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Wausau-Rhinelander, WI",Wausau,140,,,,,485325,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"West Palm Beach-Ft. Pierce, FL",West Palm Beach,100,,,,,2341975,80000,https://www.wpb.org/government/public-utilities/water-quality-reports,approximate
+"Wheeling, WV-Steubenville, OH",Wheeling,130,,,,,316375,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Wichita Falls, TX-Lawton, OK",Wichita Falls,250,,,,,391700,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Wichita-Hutchinson, KS Plus",Wichita,250,,,,,1147475,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Wilkes Barre-Scranton, PA",Scranton,75,,,,,1472975,65000,https://www.amwater.com/paaw/water-quality/,approximate
+"Wilmington, NC",Wilmington,120,,,,,600525,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Yakima-Pasco-Richland-Kennewick, WA",Yakima,70,,,,,670075,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Youngstown, OH",Youngstown,130,,,,,657500,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Yuma, AZ-El Centro, CA",Yuma,275,,,,,311650,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate
+"Zanesville, OH",Zanesville,130,,,,,81125,,https://www.stone-stream.com/blogs/knowledgebase/hard-water-map,approximate

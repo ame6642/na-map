@@ -1,0 +1,36 @@
+city,province,lat,lon,french_market,hardness_mgl,demand_t1,demand_t2,demand_t3,demand_t4,population,median_income,hardness_source,precision_flag
+Toronto,ON,43.65,-79.38,0,125,,,,,6202225,97000,https://www.toronto.ca/services-payments/water-environment/tap-water-in-toronto/,approximate
+Montreal,QC,45.5,-73.57,1,116,,,,,4291732,71000,https://montreal.ca/en/topics/drinking-water-and-its-quality,approximate
+Vancouver,BC,49.28,-123.12,0,5,,,,,2642825,85000,https://metrovancouver.org/services/water/water-quality-monitoring,approximate
+Calgary,AB,51.05,-114.07,0,190,,,,,1481806,100000,https://www.calgary.ca/water/drinking-water/water-quality.html,approximate
+Edmonton,AB,53.55,-113.49,0,160,,,,,1418118,96000,https://www.epcor.com/products-services/water/water-quality/,approximate
+Ottawa-Gatineau,ON,45.42,-75.7,1,30,,,,,1488307,98000,https://ottawa.ca/en/living-ottawa/drinking-water/water-quality,approximate
+Winnipeg,MB,49.9,-97.14,0,80,,,,,834678,83000,https://www.winnipeg.ca/waterandwaste/water/quality/,approximate
+Quebec City,QC,46.81,-71.21,1,50,,,,,839311,73000,https://www.ville.quebec.qc.ca/citoyens/environnement/eau/,approximate
+Hamilton,ON,43.26,-79.87,0,125,,,,,785184,91000,https://www.hamilton.ca/home-neighbourhood/water-sewer/drinking-water,approximate
+Kitchener-Waterloo,ON,43.45,-80.49,0,275,,,,,575847,92000,https://www.regionofwaterloo.ca/en/living-here/water-quality.aspx,approximate
+London,ON,42.98,-81.25,0,200,,,,,543551,78000,https://london.ca/living-london/water-environment/drinking-water,approximate
+Victoria,BC,48.43,-123.37,0,12,,,,,397237,84000,https://www.crd.bc.ca/service/drinking-water/water-quality,approximate
+Halifax,NS,44.65,-63.58,0,15,,,,,465703,78000,https://www.halifaxwater.ca/water-quality,approximate
+Oshawa,ON,43.9,-78.86,0,125,,,,,415311,100000,https://www.durham.ca/en/living-here/drinking-water.aspx,approximate
+Windsor,ON,42.3,-83.02,0,120,,,,,422630,76000,https://www.enwin.com/water/water-quality/,approximate
+Saskatoon,SK,52.13,-106.67,0,160,,,,,317480,88000,https://www.saskatoon.ca/services-residents/power-water-sewer/drinking-water,approximate
+Regina,SK,50.45,-104.62,0,200,,,,,249217,91000,https://www.regina.ca/home-property/water/water-quality/,approximate
+St. Catharines-Niagara,ON,43.16,-79.25,0,125,,,,,433604,75000,https://www.niagararegion.ca/living/water/quality.aspx,approximate
+St. John's,NL,47.56,-52.71,0,10,,,,,212579,92000,https://www.stjohns.ca/en/living-in-st-johns/water-services.aspx,approximate
+Kelowna,BC,49.89,-119.5,0,130,,,,,222162,84000,https://www.kelowna.ca/city-services/water-wastewater/water-quality,approximate
+Barrie,ON,44.39,-79.69,0,220,,,,,212856,94000,https://www.barrie.ca/services/water-wastewater,approximate
+Sherbrooke,QC,45.4,-71.9,1,25,,,,,227398,62000,https://www.sherbrooke.ca/fr/services-a-la-population/environnement/eau-potable,approximate
+Guelph,ON,43.55,-80.25,0,350,,,,,165588,94000,https://guelph.ca/living/environment/water/water-quality/,approximate
+Abbotsford,BC,49.05,-122.3,0,20,,,,,195726,83000,https://www.abbotsford.ca/city-services/water/water-quality,approximate
+Kingston,ON,44.23,-76.49,0,120,,,,,172546,79000,https://utilitieskingston.com/Water/Quality,approximate
+Trois-Rivieres,QC,46.35,-72.55,1,60,,,,,161489,58000,https://www.v3r.net/services-au-citoyen/environnement/eau-potable,approximate
+Moncton,NB,46.09,-64.77,0,25,,,,,157717,69000,https://www.moncton.ca/residents/water-sewer,approximate
+Saguenay,QC,48.43,-71.07,1,15,,,,,160980,66000,https://ville.saguenay.ca/services-aux-citoyens/eau-potable,approximate
+Thunder Bay,ON,48.38,-89.25,0,45,,,,,123258,78000,https://www.thunderbay.ca/en/city-services/drinking-water.aspx,approximate
+Greater Sudbury,ON,46.49,-80.99,0,90,,,,,170605,80000,https://www.greatersudbury.ca/live/water-and-wastewater/,approximate
+Lethbridge,AB,49.69,-112.84,0,175,,,,,123847,82000,https://www.lethbridge.ca/living-here/water-wastewater/,approximate
+Nanaimo,BC,49.17,-123.94,0,15,,,,,115459,74000,https://www.nanaimo.ca/city-services/water-sewage,approximate
+Fredericton,NB,45.96,-66.64,0,90,,,,,108610,76000,https://www.fredericton.ca/en/city-services/water-sewer,approximate
+Charlottetown,PE,46.24,-63.13,0,160,,,,,78858,70000,https://www.charlottetown.ca/city_hall/city_departments/water_sewer_utility,approximate
+Red Deer,AB,52.27,-113.81,0,200,,,,,100844,87000,https://www.reddeer.ca/city-services/water-and-wastewater/,approximate
