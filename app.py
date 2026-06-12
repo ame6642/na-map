@@ -151,7 +151,9 @@ st.plotly_chart(fig, width="stretch")
 st.caption(
     "Search demand is a Google Trends relative index (12-month share-of-search "
     "by region, four awareness tiers, summed per tier; Quebec includes "
-    "French-language terms). Indexes compare regions directionally and become "
+    "French-language terms). Canadian demand is province-level, as Google "
+    "Trends does not expose city granularity for Canada. Indexes compare "
+    "regions directionally and become "
     "absolute volumes when re-run through an active Google Ads account. Water "
     "hardness is mg/L as CaCO3, marked per region as a verified utility figure "
     "or an estimate. Income is shown in local currency (USD / CAD)."

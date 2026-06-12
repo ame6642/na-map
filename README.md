@@ -23,7 +23,7 @@ Demand uses Google Trends relative indexes instead of manual Keyword Planner loo
 python fetch_demand.py
 ```
 
-It pulls all four term tiers for every US DMA and Canadian city (province fallback where Trends has no city data), adds the French mirror for Quebec, and writes the results into the two CSVs. Google rate-limits scrapers, so the script sleeps between requests and caches finished requests in `demand_cache.json`; if it stalls or you abort, run it again and it resumes. Expect 15 to 40 minutes.
+It pulls all four term tiers for every US DMA and every Canadian province (Google Trends does not expose city-level data for Canada, so each city carries its province's index), adds the French mirror for Quebec, and writes the results into the two CSVs. Terms are queried one at a time; multi-term queries make Google return per-region shares instead of the cross-region index, which flattens the map. Google rate-limits scrapers, so the script sleeps between requests and caches finished requests in `demand_cache_v2.json`; if it stalls or you abort, run it again and it resumes. Roughly 80 minutes for a full fresh run; refreshes that reuse the cache are instant.
 
 Trends indexes are share-of-search, already population-adjusted. The app accounts for this: "Search intensity" uses the index directly, "Estimated audience" multiplies by population. If you later replace these with true Keyword Planner volumes, set `DEMAND_IS_TRENDS_INDEX = False` at the top of `app.py`.
 

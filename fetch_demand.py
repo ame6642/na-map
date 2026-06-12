@@ -4,18 +4,21 @@
 #   pip install pytrends
 #   python fetch_demand.py
 #
-# What it does:
-#   US     -> interest by Nielsen DMA (matches the map regions directly)
-#   Canada -> interest by city, falling back to province where Trends has no
-#             city-level data; Quebec cities also get the French term mirror
+# Terms are queried ONE AT A TIME: multi-term queries make Google return each
+# region's percentage split across the terms (sums to ~100 per region), which
+# destroys cross-region comparison. Single-term queries return the true 0-100
+# index across regions.
 #
-# Values are Google Trends relative indexes (share-of-search, 0-100 per term
-# batch), summed per tier. They are comparable across regions in one run but
-# are NOT absolute search volumes. The app is configured for this basis.
+# Granularity:
+#   US     -> Nielsen DMA (matches the map regions directly)
+#   Canada -> PROVINCE level. Google Trends does not expose city-level data
+#             for Canada (CITY resolution returns provinces), so every city
+#             carries its province's index; Quebec cities add the French
+#             mirror terms. City differentiation in Canada therefore comes
+#             from hardness, income, and population, not demand.
 #
-# Google rate-limits aggressively. The script sleeps between requests, retries
-# with backoff on 429s, and caches every completed request in
-# demand_cache.json, so if it dies partway just run it again and it resumes.
+# ~128 requests total, roughly 80 minutes at current pacing. Every finished
+# request is cached in demand_cache_v2.json: abort and rerun to resume.
 
 import csv
 import json
@@ -32,7 +35,7 @@ except ImportError:
     sys.exit("pytrends is not installed. Run: pip install pytrends")
 
 TIMEFRAME = "today 12-m"
-CACHE_FILE = Path("demand_cache.json")
+CACHE_FILE = Path("demand_cache_v2.json")
 
 TERMS_EN = {
     "demand_t1": ["shower filter", "filtered shower head", "shower head filter",
@@ -71,25 +74,19 @@ TERMS_FR = {
                   "nettoyant acide salicylique"],
 }
 
-# Trends city/region name -> ca_cities.csv city name (after normalisation)
-CA_ALIASES = {
-    "ottawa": "Ottawa-Gatineau", "gatineau": "Ottawa-Gatineau",
-    "quebec": "Quebec City", "quebec city": "Quebec City",
-    "kitchener": "Kitchener-Waterloo", "waterloo": "Kitchener-Waterloo",
-    "cambridge": "Kitchener-Waterloo",
-    "st catharines": "St. Catharines-Niagara",
-    "niagara falls": "St. Catharines-Niagara",
-    "sudbury": "Greater Sudbury", "greater sudbury": "Greater Sudbury",
-    "st johns": "St. John's", "saint johns": "St. John's",
-    "chicoutimi": "Saguenay", "saguenay": "Saguenay",
-    "trois rivieres": "Trois-Rivieres", "montreal": "Montreal",
-    "abbotsford": "Abbotsford", "mission": "Abbotsford",
+# Trends DMA spellings that differ from the boundary file (normalised form)
+US_ALIASES = {
+    "birminghamal": "Birmingham (Anniston and Tuscaloosa), AL",
+    "florencemyrtlebeachsc": "Myrtle Beach-Florence, SC",
+    "miamiftlauderdalefl": "Miami-Fort Lauderdale, FL",
+    "paducahkycapegirardeaumoharrisburgmountvernonil": "Paducah, KY-Cape Girardeau, MO-Harrisburg, IL",
+    "wichitahutchinsonks": "Wichita-Hutchinson, KS Plus",
 }
 
-PROVINCES = {"ON": "Ontario", "QC": "Quebec", "BC": "British Columbia",
-             "AB": "Alberta", "MB": "Manitoba", "SK": "Saskatchewan",
-             "NS": "Nova Scotia", "NB": "New Brunswick",
-             "NL": "Newfoundland and Labrador", "PE": "Prince Edward Island"}
+PROVINCES = {"ON": "ontario", "QC": "quebec", "BC": "british columbia",
+             "AB": "alberta", "MB": "manitoba", "SK": "saskatchewan",
+             "NS": "nova scotia", "NB": "new brunswick",
+             "NL": "newfoundland and labrador", "PE": "prince edward island"}
 
 
 def norm(s):
@@ -102,104 +99,107 @@ def norm_tight(s):
     return re.sub(r"[^a-z0-9]", "", norm(s))
 
 
-def batches(terms, size=5):
-    return [terms[i:i + size] for i in range(0, len(terms), size)]
-
-
 cache = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {}
 pytrends = TrendReq(hl="en-US", tz=0, timeout=(10, 30))
 
+ALL_EN = sum(TERMS_EN.values(), [])
+ALL_FR = sum(TERMS_FR.values(), [])
+TOTAL_REQUESTS = len(ALL_EN) * 2 + len(ALL_FR)
+done_requests = 0
 
-def fetch(batch, geo, resolution):
-    key = f"{geo}|{resolution}|{TIMEFRAME}|" + "|".join(batch)
+
+def fetch_term(term, geo, resolution):
+    """One term per query: returns the true 0-100 index across regions."""
+    global done_requests
+    key = f"v2|{geo}|{resolution}|{TIMEFRAME}|{term}"
     if key in cache:
+        done_requests += 1
         return cache[key]
     for attempt in range(5):
         try:
-            pytrends.build_payload(batch, timeframe=TIMEFRAME, geo=geo)
+            pytrends.build_payload([term], timeframe=TIMEFRAME, geo=geo)
             df = pytrends.interest_by_region(resolution=resolution,
                                              inc_low_vol=True, inc_geo_code=False)
-            result = {region: int(row.sum()) for region, row in df.iterrows()}
+            result = {region: int(row.iloc[0]) for region, row in df.iterrows()}
+
+            # Guard against the share-normalisation failure mode.
+            nz = [v for v in result.values() if v > 0]
+            if len(nz) > 10 and sum(v == 100 for v in nz) / len(nz) > 0.5:
+                sys.exit(f"Aborting: '{term}' returned flat 100s across regions, "
+                         "which means Google served share data again. Do not "
+                         "trust this run; report the issue.")
+
             cache[key] = result
             CACHE_FILE.write_text(json.dumps(cache))
-            time.sleep(random.uniform(10, 18))
+            done_requests += 1
+            time.sleep(random.uniform(25, 40))
             return result
+        except SystemExit:
+            raise
         except Exception as e:
             wait = 60 * (2 ** attempt)
             print(f"  blocked/error ({e.__class__.__name__}), retrying in {wait}s "
                   f"(progress is cached, safe to abort and rerun later)")
             time.sleep(wait)
     sys.exit("Google kept refusing after 5 attempts. Run the script again "
-             "in an hour; it will resume from demand_cache.json.")
+             "in an hour; it will resume from demand_cache_v2.json.")
 
 
 def tier_totals(terms, geo, resolution):
     totals = {}
-    for b in batches(terms):
-        print(f"  {geo}/{resolution}: {b[0]} (+{len(b)-1} terms)")
-        for region, val in fetch(b, geo, resolution).items():
+    for term in terms:
+        print(f"  [{done_requests + 1}/{TOTAL_REQUESTS}] {geo}/{resolution}: {term}")
+        for region, val in fetch_term(term, geo, resolution).items():
             totals[region] = totals.get(region, 0) + val
     return totals
 
+
+print(f"Single-term mode: {TOTAL_REQUESTS} requests, roughly 80 minutes. "
+      "Safe to abort and rerun; finished requests are cached.")
 
 # ---------------- United States ----------------
 print("United States: 4 tiers at DMA resolution")
 us_rows = list(csv.DictReader(open("us_dma.csv", newline="", encoding="utf-8")))
 us_by_norm = {norm_tight(r["dma_name"]): r for r in us_rows}
+us_by_name = {r["dma_name"]: r for r in us_rows}
 
 unmatched = set()
 for tier, terms in TERMS_EN.items():
     totals = tier_totals(terms, "US", "DMA")
     for region, val in totals.items():
-        row = us_by_norm.get(norm_tight(region))
+        key = norm_tight(region)
+        row = us_by_norm.get(key) or us_by_name.get(US_ALIASES.get(key, ""))
         if row is None:
             unmatched.add(region)
             continue
         row[tier] = val
 
-# ---------------- Canada ----------------
-print("Canada: 4 tiers, city level with province fallback")
+# ---------------- Canada (province level) ----------------
+print("Canada: 4 tiers at province level (Trends has no city data for CA)")
 ca_rows = list(csv.DictReader(open("ca_cities.csv", newline="", encoding="utf-8")))
 
-def match_city(region_name):
-    n = norm(region_name)
-    if n in CA_ALIASES:
-        return CA_ALIASES[n]
-    for r in ca_rows:
-        if norm(r["city"]) == n:
-            return r["city"]
-    return None
+def province_totals_logged(termset, label):
+    out = {}
+    for tier, terms in termset.items():
+        tot = {}
+        for term in terms:
+            print(f"  [{done_requests + 1}/{TOTAL_REQUESTS}] CA/REGION ({label}): {term}")
+            for region, val in fetch_term(term, "CA", "REGION").items():
+                tot[norm(region)] = tot.get(norm(region), 0) + val
+        out[tier] = tot
+    return out
 
-for tier, terms in TERMS_EN.items():
-    city_vals = tier_totals(terms, "CA", "CITY")
-    prov_vals = tier_totals(terms, "CA", "REGION")
-    resolved = {}
-    for region, val in city_vals.items():
-        city = match_city(region)
-        if city:
-            resolved[city] = max(resolved.get(city, 0), val)
-    for r in ca_rows:
-        if r["city"] in resolved:
-            r[tier] = resolved[r["city"]]
-            r.setdefault("_basis", set()).add("city")
-        else:
-            pv = prov_vals.get(PROVINCES[r["province"]], 0)
-            r[tier] = pv
-            r.setdefault("_basis", set()).add("province")
+en = province_totals_logged(TERMS_EN, "EN")
+print("Quebec: French term mirror")
+fr = province_totals_logged(TERMS_FR, "FR")
 
-print("Quebec: French term mirror, added to Quebec cities")
-for tier, terms in TERMS_FR.items():
-    city_vals = tier_totals(terms, "CA", "CITY")
-    prov_vals = tier_totals(terms, "CA", "REGION")
-    resolved = {}
-    for region, val in city_vals.items():
-        city = match_city(region)
-        if city:
-            resolved[city] = max(resolved.get(city, 0), val)
-    for r in ca_rows:
+for r in ca_rows:
+    p = PROVINCES[r["province"]]
+    for tier in TERMS_EN:
+        val = en[tier].get(p, 0)
         if r["french_market"] == "1":
-            extra = resolved.get(r["city"], prov_vals.get(PROVINCES[r["province"]], 0))
-            r[tier] = int(r[tier] or 0) + extra
+            val += fr[tier].get(p, 0)
+        r[tier] = val
 
 # ---------------- write back ----------------
 us_cols = ["dma_name", "principal_city", "hardness_mgl", "demand_t1", "demand_t2",
@@ -219,11 +219,16 @@ with open("ca_cities.csv", "w", newline="", encoding="utf-8") as f:
     w.writerows([{k: r.get(k, "") for k in ca_cols} for r in ca_rows])
 
 # ---------------- coverage report ----------------
-us_done = sum(1 for r in us_rows if r.get("demand_t1"))
+us_done = sum(1 for r in us_rows if r.get("demand_t1") not in ("", None))
 print(f"\nUS: demand written for {us_done}/{len(us_rows)} DMAs")
 if unmatched:
-    print(f"  Trends regions with no map match (ignored): {sorted(unmatched)[:8]}")
-city_n = sum(1 for r in ca_rows if "city" in r.get("_basis", set()))
-print(f"Canada: {city_n} cities at city-level data, "
-      f"{len(ca_rows) - city_n} using province fallback")
-print("Done. Demand values are Google Trends relative indexes (12 months).")
+    print(f"  Trends regions with no map match (AK/HI markets are expected here): "
+          f"{sorted(unmatched)[:8]}")
+
+t1 = [int(r["demand_t1"]) for r in us_rows if r.get("demand_t1") not in ("", None)]
+if t1 and len(set(t1)) < 10:
+    print("WARNING: demand_t1 has almost no variation; data may be bad.")
+else:
+    print(f"Gradient check OK: demand_t1 spans {min(t1)}-{max(t1)} "
+          f"with {len(set(t1))} distinct values.")
+print("Done. Values are Google Trends relative indexes (12 months).")
