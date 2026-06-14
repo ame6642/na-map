@@ -51,6 +51,16 @@ def norm(s):
         return s * 0
     return (s - lo) / (hi - lo)
 
+def norm_robust(s):
+    # Winsorise the top tail before min-max scaling. Google Trends indexes
+    # inflate in low-population regions (e.g. Cheyenne, WY), and plain min-max
+    # lets that single outlier define 1.0 and crush every other market toward 0.
+    # Capping at the 95th percentile keeps the bulk of the distribution legible.
+    cap = s.quantile(0.95)
+    if pd.isna(cap) or cap == 0:
+        return norm(s)
+    return norm(s.clip(upper=cap))
+
 # ---------------- sidebar ----------------
 st.sidebar.title("Controls")
 country = st.sidebar.radio("Country", ["United States", "Canada"])
@@ -65,10 +75,12 @@ preset = st.sidebar.radio("View", [
 if DEMAND_IS_TRENDS_INDEX:
     demand_mode = st.sidebar.radio(
         "Demand basis",
-        ["Search intensity (per capita)", "Estimated audience (intensity x population)"],
+        ["Estimated audience (intensity x population)", "Search intensity (per capita)"],
+        index=0,
         help="Google Trends indexes are share-of-search, so they are already "
-             "population-adjusted. Intensity shows unusual concentration; "
-             "estimated audience scales by population to show market size.")
+             "population-adjusted. Estimated audience scales by population to "
+             "show market size and is the default for spend decisions; search "
+             "intensity shows per-capita concentration and favours small markets.")
     per_capita = demand_mode.startswith("Search intensity")
 else:
     demand_mode = st.sidebar.radio("Demand basis", ["Per 100k residents", "Absolute volume"])
@@ -107,13 +119,19 @@ for t in TIERS:
     else:
         df[t + "_basis"] = df[t] / df["population"] * 100_000 if per_capita else df[t]
 
+# Impute missing income with the column median so markets lacking an income
+# figure score neutrally instead of being treated as the poorest (US median
+# income is absent for ~70% of DMAs). The displayed table still shows the raw
+# value (blank where unknown); this imputation only feeds the score.
+income_for_score = df["median_income"].fillna(df["median_income"].median())
+
 df["score"] = (
     (w_hard / total) * norm(df["hardness_mgl"]).fillna(0)
-    + (w_t1 / total) * norm(df["demand_t1_basis"]).fillna(0)
-    + (w_t2 / total) * norm(df["demand_t2_basis"]).fillna(0)
-    + (w_t3 / total) * norm(df["demand_t3_basis"]).fillna(0)
-    + (w_t4 / total) * norm(df["demand_t4_basis"]).fillna(0)
-    + (w_inc / total) * norm(df["median_income"]).fillna(0)
+    + (w_t1 / total) * norm_robust(df["demand_t1_basis"]).fillna(0)
+    + (w_t2 / total) * norm_robust(df["demand_t2_basis"]).fillna(0)
+    + (w_t3 / total) * norm_robust(df["demand_t3_basis"]).fillna(0)
+    + (w_t4 / total) * norm_robust(df["demand_t4_basis"]).fillna(0)
+    + (w_inc / total) * norm(income_for_score).fillna(0)
 )
 
 # ---------------- map ----------------
@@ -162,22 +180,31 @@ st.caption(
 # ---------------- ranked table ----------------
 st.subheader("Regions ranked by opportunity")
 name_col = "dma_name" if country == "United States" else "city"
+
+# Canadian demand is province-level (Google Trends exposes no city granularity
+# for Canada), so every city in a province carries the identical index. Flag
+# that in the column headers so the repeated numbers aren't read as city data.
+tbl_labels = dict(LABELS)
+if country == "Canada":
+    for t in ["demand_t1", "demand_t2", "demand_t3", "demand_t4"]:
+        tbl_labels[t] = LABELS[t] + " (province-level)"
+
 table = (df.sort_values("score", ascending=False)
            [[name_col, "hardness_mgl", "demand_t1", "demand_t2", "demand_t3",
              "demand_t4", "population", "median_income", "score", "quality"]]
-           .rename(columns=LABELS))
+           .rename(columns=tbl_labels))
 st.dataframe(
     table,
     width="stretch", hide_index=True,
     column_config={
-        LABELS["hardness_mgl"]: st.column_config.NumberColumn(format="%.0f"),
-        LABELS["demand_t1"]: st.column_config.NumberColumn(format="localized"),
-        LABELS["demand_t2"]: st.column_config.NumberColumn(format="localized"),
-        LABELS["demand_t3"]: st.column_config.NumberColumn(format="localized"),
-        LABELS["demand_t4"]: st.column_config.NumberColumn(format="localized"),
-        LABELS["population"]: st.column_config.NumberColumn(format="localized"),
-        LABELS["median_income"]: st.column_config.NumberColumn(format="dollar"),
-        LABELS["score"]: st.column_config.NumberColumn(format="%.3f"),
+        tbl_labels["hardness_mgl"]: st.column_config.NumberColumn(format="%.0f"),
+        tbl_labels["demand_t1"]: st.column_config.NumberColumn(format="localized"),
+        tbl_labels["demand_t2"]: st.column_config.NumberColumn(format="localized"),
+        tbl_labels["demand_t3"]: st.column_config.NumberColumn(format="localized"),
+        tbl_labels["demand_t4"]: st.column_config.NumberColumn(format="localized"),
+        tbl_labels["population"]: st.column_config.NumberColumn(format="localized"),
+        tbl_labels["median_income"]: st.column_config.NumberColumn(format="dollar"),
+        tbl_labels["score"]: st.column_config.NumberColumn(format="%.3f"),
     },
 )
 
